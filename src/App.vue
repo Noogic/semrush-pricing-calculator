@@ -32,7 +32,7 @@
                 <h2 class="text-xl font-bold text-slate-700">Calls</h2>
                 <div class="mt-6">
                     <div class="px-4 pb-1 grid grid-cols-8 border-b border-slate-300">
-                        <div class="col-span-2">Type</div>
+                        <div class="col-span-6">Type</div>
                         <div>Lines</div>
                     </div>
                     <div class="mt-4 space-y-4">
