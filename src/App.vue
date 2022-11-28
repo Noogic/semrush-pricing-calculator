@@ -33,7 +33,7 @@
                 <div class="mt-6 space-y-4">
                     <div class="px-4 pb-1 grid grid-cols-4 border-b border-slate-300">
                         <div class="col-span-2">Type</div>
-                        <div>Calls</div>
+                        <div>Lines</div>
                     </div>
                     <div v-for="(call, index) in calls" :key="call.type.type" class="shadow">
                         <div class="p-4 grid grid-cols-4 bg-white rounded-lg">
