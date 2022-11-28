@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-slate-800 flex flex-col">
-        <div class="mt-12 p-12 mx-auto w-full max-w-5xl bg-slate-100 rounded-lg">
+        <div class="mt-12 p-12 mx-auto w-full max-w-7xl bg-slate-100 rounded-lg">
             <h1 class="text-2xl inline-flex font-bold text-slate-700 bg-white rounded-xl p-5 shadow-lg">SEMRush API costs calculator</h1>
             <div>
                 <div class="mt-12 flex justify-between">
@@ -38,7 +38,15 @@
                     <div v-for="(call, index) in calls" :key="call.type.type" class="shadow">
                         <div class="p-4 grid grid-cols-4 bg-white rounded-lg">
                             <div class="col-span-2">
-                                {{ call.type.name }}
+                                <div class="font-semibold">
+                                    {{ call.type.name }}
+                                </div>
+                                <div class="mt-1 text-sm text-slate-500">
+                                    {{ call.type.description }}
+                                </div>
+                                <a :href="call.type.link" class="text-xs text-blue-300">
+                                    {{ call.type.link }}
+                                </a>
                             </div>
                             <div>
                                 <input
@@ -72,21 +80,27 @@ const types = {
         name: 'Domain Overview',
         price: 10,
         max_database_results: 1,
-        expected_results: 1
+        expected_results: 1,
+        description: 'This report provides live or historical data on a domain’s keyword rankings in both organic and paid search in all regional databases.',
+        link: 'https://developer.semrush.com/api/v3/analytics/overview-reports/#domain-overview-all-databases',
     },
     domain_organic: {
         type: 'domain_organic',
         name: 'Domain Organic Search Keywords',
         price: 10,
         max_database_results: 100000,
-        expected_results: 1000
+        expected_results: 1000,
+        description: 'This report lists keywords that bring users to a domain via Google\'s top 100 organic search results.',
+        link: 'https://developer.semrush.com/api/v3/analytics/domain-reports/#domain-organic-search-keywords',
     },
     phrase_all: {
         type: 'phrase_all',
         name: 'Keyword Overview',
         price: 10,
         max_database_results: 100000,
-        expected_results: 1
+        expected_results: 1,
+        description: 'This report provides a summary of a keyword, including its volume, CPC, competition, and the number of results in all regional databases.',
+        link: 'https://developer.semrush.com/api/v3/analytics/keyword-reports/#keyword-overview-all-databases',
     }
 }
 
