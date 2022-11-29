@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-slate-800 flex flex-col">
         <div class="mt-12 p-12 mx-auto w-full max-w-7xl bg-slate-100 rounded-lg">
-            <h1 class="text-2xl inline-flex font-bold text-slate-700 bg-white rounded-xl p-5 shadow-lg">SEMRush API costs calculator</h1>
+            <h1 class="text-2xl inline-flex font-semibold text-slate-700 bg-white rounded-xl p-5 shadow-lg"><span class="font-bold text-amber-500 mr-2">SEMRush</span> API costs calculator</h1>
             <div>
                 <div class="mt-12 flex justify-between">
                     <div class="flex text-slate-700">
