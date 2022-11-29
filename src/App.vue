@@ -8,11 +8,19 @@
                         <div>
                             Current cost: <span class="ml-1 font-bold text-lg text-amber-500">{{ Number(costs).toFixed(5) }}</span>
                         </div>
-                        <div class="ml-6">
+                        <div class="ml-8">
                             <span class="text-slate-500">Databases</span>
                             <input
                                 type="number"
                                 v-model="databases"
+                                class="ml-3 w-12 border-0 border-b border-b-amber-500 bg-slate-100 text-slate-700 font-semibold focus:border-indigo-600 focus:ring-0"
+                            />
+                        </div>
+                        <div class="ml-8">
+                            <span class="text-slate-500">Months</span>
+                            <input
+                                type="number"
+                                v-model="months"
                                 class="ml-3 w-12 border-0 border-b border-b-amber-500 bg-slate-100 text-slate-700 font-semibold focus:border-indigo-600 focus:ring-0"
                             />
                         </div>
@@ -105,6 +113,10 @@
 import { computed, ref } from "vue";
 import { XMarkIcon, PlusIcon } from '@heroicons/vue/24/outline';
 
+const unitPrice = ref(0.0000225);
+const databases = ref(1);
+const months = ref(1);
+
 const types = {
     domain_ranks: {
         type: 'domain_ranks',
@@ -135,9 +147,6 @@ const types = {
     }
 }
 
-const unitPrice = ref(0.0000225);
-const databases = ref(1);
-
 const calls = ref([
     {
         type: types.domain_ranks,
@@ -156,7 +165,7 @@ const calls = ref([
 const costs = computed(() => calls.value.reduce(
     (accumulator, currentValue) => accumulator + currentValue.quantity * currentValue.type.price,
     0
-) * unitPrice.value * databases.value);
+) * unitPrice.value * databases.value * months.value);
 
 const unusedCalls = computed(() => Object.entries(types).filter(type => !calls.value.map(call => call.type.type).includes(type[0])));
 
