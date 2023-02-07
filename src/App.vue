@@ -116,6 +116,7 @@ import { XMarkIcon, PlusIcon } from '@heroicons/vue/24/outline';
 const unitPrice = ref(0.0000225);
 const databases = ref(1);
 const months = ref(1);
+const apiUnits = ref(10);
 
 const types = {
     domain_ranks: {
@@ -165,7 +166,7 @@ const calls = ref([
 const costs = computed(() => calls.value.reduce(
     (accumulator, currentValue) => accumulator + currentValue.quantity * currentValue.type.price,
     0
-) * unitPrice.value * databases.value * months.value);
+) * unitPrice.value * databases.value * months.value * apiUnits.value);
 
 const unusedCalls = computed(() => Object.entries(types).filter(type => !calls.value.map(call => call.type.type).includes(type[0])));
 
