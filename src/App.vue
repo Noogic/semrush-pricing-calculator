@@ -133,7 +133,7 @@ const types = {
         name: 'Domain Organic Search Keywords',
         price: 10,
         max_database_results: 100000,
-        expected_results: 1000,
+        expected_results: 10,
         description: 'This report lists keywords that bring users to a domain via Google\'s top 100 organic search results.',
         link: 'https://developer.semrush.com/api/v3/analytics/domain-reports/#domain-organic-search-keywords',
     },
